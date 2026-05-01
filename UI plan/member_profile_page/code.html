@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ede1cf",
+                        "tertiary": "#e0d5c3",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-tertiary": "#363024",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1c1c19",
+                        "on-secondary-container": "#b7b5b0",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#544931",
+                        "primary-fixed": "#f1e1c0",
+                        "on-error": "#690005",
+                        "secondary-container": "#474743",
+                        "on-surface-variant": "#cdc5b9",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#695d43",
+                        "on-tertiary-fixed-variant": "#4d4639",
+                        "primary-container": "#c8b99a",
+                        "surface-bright": "#3a3939",
+                        "on-background": "#e5e2e1",
+                        "primary": "#e5d5b4",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#d0c5b4",
+                        "on-secondary": "#31302d",
+                        "surface-tint": "#d4c5a5",
+                        "on-tertiary-fixed": "#201b10",
+                        "secondary": "#c9c6c1",
+                        "tertiary-container": "#c4b9a8",
+                        "outline": "#979085",
+                        "secondary-fixed": "#e5e2dd",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4b463d",
+                        "on-primary-fixed": "#221b06",
+                        "on-primary-fixed-variant": "#50462e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#392f19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#51493c",
+                        "primary-fixed-dim": "#d4c5a5"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Newsreader"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Newsreader"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Newsreader"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .parchment-glow {
+            background: radial-gradient(circle at center, rgba(200, 185, 154, 0.08) 0%, transparent 70%);
+        }
+        .tapered-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4d4639 50%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container font-body-md overflow-x-hidden">
+<div class="noise-overlay"></div>
+<!-- TopAppBar -->
+<header class="bg-[#0a0a0a] dark:bg-[#0a0a0a] border-b border-[#4d4639]/30 sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="font-headline-lg tracking-wide uppercase">Tareekh | تاريخ</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-serif tracking-wide uppercase text-sm">
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Members</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#c8b99a] p-2 hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 rounded-full" data-icon="dark_mode">dark_mode</button>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto px-8 pt-16 flex gap-12">
+<!-- SideNavBar (Suppressed for focused Member Profile as per relevance check, but keeping structure for layout balance) -->
+<aside class="hidden lg:flex flex-col w-64 h-[calc(100vh-120px)] sticky top-32 border-r border-[#4d4639]/30 pr-8">
+<div class="mb-8">
+<h3 class="text-[#c8b99a] font-headline-md italic">Chapters</h3>
+<p class="text-[#c8b99a]/50 text-label-sm uppercase tracking-widest">Historical Record</p>
+</div>
+<nav class="space-y-4">
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-serif">Preface</span>
+</a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-serif">The Early Era</span>
+</a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif">Golden Age</span>
+</a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-serif">Colonial Impact</span>
+</a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-serif">Modern Revival</span>
+</a>
+</nav>
+</aside>
+<!-- Profile Canvas -->
+<div class="flex-1 max-w-4xl mx-auto">
+<!-- Hero Profile Section -->
+<section class="mb-24 parchment-glow p-12 relative overflow-hidden border border-[#4d4639]/10 rounded-sm">
+<div class="flex flex-col md:flex-row gap-12 items-center md:items-start relative z-10">
+<div class="w-48 h-64 border border-[#c8b99a]/30 p-1 bg-surface-container-low grayscale contrast-125">
+<img class="w-full h-full object-cover" data-alt="A dignified portrait of a scholar in a dark, atmospheric library setting. The subject is wearing traditional academic attire, illuminated by soft, warm light from a nearby window that highlights the fine textures of aged paper and wood in the background. The aesthetic is monochromatic and cinematic, echoing the reverent and scholarly tone of the Tareekh archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsabDb-pWC75svTvFzZHrZAi494rUQnZ0eRyei7xDzpmjrjaaXr_MEp9aU1CuiIWWTSrf-uvgzMWTYISaMJNHGo1Pz1B6boJbhXjPyghMl920SRuu2jpErqH_w_MPoDXDvbgzqhdN4tup8umiJ9kJg23pSk_SA0qZwu_ELouwy-U1XDCUIR0C7immrCiaNHHbQyA_Fn0leNnYbXQIYbztbCKHoMm_uHHGO_1E5ToBREMGJcFItR7x4SkEEr09p5P32IUO-h0SRGQ"/>
+</div>
+<div class="flex-1 space-y-4 text-center md:text-left">
+<div class="space-y-1">
+<span class="text-primary-container font-label-sm tracking-widest uppercase block">Member ID: TRKH-8821</span>
+<h1 class="text-display-lg font-headline-lg text-[#c8b99a]">Dr. Elias Al-Farabi</h1>
+</div>
+<p class="text-body-lg text-on-surface-variant font-serif italic max-w-xl">
+                            "Preservation is not merely an act of storage, but a living dialogue between the silence of the past and the noise of the future."
+                        </p>
+<div class="pt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+<button class="px-6 py-2 border border-[#c8b99a] text-[#c8b99a] font-serif hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300">
+                                Send Inquiry
+                            </button>
+<button class="px-6 py-2 border border-[#4d4639] text-on-surface-variant font-serif hover:border-[#c8b99a] hover:text-[#c8b99a] transition-all">
+                                View Folios
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid of Details -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Bio & Recognition -->
+<div class="md:col-span-2 space-y-12">
+<div class="bg-surface-container-low border-t border-[#c8b99a]/40 p-8">
+<h2 class="text-headline-md font-headline-md text-primary mb-6">Scholarly Biography</h2>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p>Dr. Elias Al-Farabi serves as a Senior Archivist within the Tareekh Collective, specializing in the Andalusian Golden Age and the translation of 12th-century nautical manuscripts. His tenure at the archive has been defined by a meticulous approach to digitizing fading scripts.</p>
+<p>Before joining Tareekh, he spent a decade in Fes, Morocco, documenting the structural evolution of madrasas. His current research focuses on the intersection of astronomical mathematics and the decorative arts in late Fatimid architecture.</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md text-primary whitespace-nowrap">Recognition Badges</h2>
+<div class="tapered-line flex-1"></div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="flex flex-col items-center p-4 border border-[#4d4639]/30 hover:border-[#c8b99a]/50 transition-colors bg-[#1a1a17]">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-2" data-icon="military_tech">military_tech</span>
+<span class="text-label-sm uppercase tracking-tighter text-center">Master Scribe</span>
+</div>
+<div class="flex flex-col items-center p-4 border border-[#4d4639]/30 hover:border-[#c8b99a]/50 transition-colors bg-[#1a1a17]">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-2" data-icon="auto_stories">auto_stories</span>
+<span class="text-label-sm uppercase tracking-tighter text-center">100+ Transcripts</span>
+</div>
+<div class="flex flex-col items-center p-4 border border-[#4d4639]/30 hover:border-[#c8b99a]/50 transition-colors bg-[#1a1a17]">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-2" data-icon="travel_explore">travel_explore</span>
+<span class="text-label-sm uppercase tracking-tighter text-center">Field Researcher</span>
+</div>
+<div class="flex flex-col items-center p-4 border border-[#4d4639]/30 hover:border-[#c8b99a]/50 transition-colors bg-[#1a1a17]">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-2" data-icon="verified">verified</span>
+<span class="text-label-sm uppercase tracking-tighter text-center">Peer Reviewer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Contributions & Stats -->
+<div class="space-y-8">
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-6">
+<h3 class="text-primary font-headline-md mb-6 border-b border-[#4d4639]/30 pb-2">Contributions</h3>
+<ul class="space-y-6">
+<li class="group">
+<span class="text-label-sm text-primary-container font-medium block">OCT 2023</span>
+<p class="text-on-surface hover:text-primary transition-colors cursor-pointer">Translation of "The Navigator's Alidade"</p>
+<p class="text-xs text-on-surface-variant/60 uppercase">Manuscript • 14 Pages</p>
+</li>
+<li class="group">
+<span class="text-label-sm text-primary-container font-medium block">AUG 2023</span>
+<p class="text-on-surface hover:text-primary transition-colors cursor-pointer">Structural Analysis: Cordoba Pillar Motifs</p>
+<p class="text-xs text-on-surface-variant/60 uppercase">Field Report • 22 Plates</p>
+</li>
+<li class="group">
+<span class="text-label-sm text-primary-container font-medium block">JUN 2023</span>
+<p class="text-on-surface hover:text-primary transition-colors cursor-pointer">Restoration of Cairo Genizah Fragments</p>
+<p class="text-xs text-on-surface-variant/60 uppercase">Physical Archive • Box 12A</p>
+</li>
+</ul>
+</div>
+<div class="p-6 bg-primary-container text-on-primary-container">
+<h4 class="font-headline-md text-on-primary-container/80 mb-4 italic">Archival Impact</h4>
+<div class="flex items-end gap-2">
+<span class="text-4xl font-bold">1,204</span>
+<span class="text-label-sm uppercase pb-1">Citations</span>
+</div>
+<p class="text-sm mt-2 opacity-70">Documenting history for 4.2k active researchers globally.</p>
+</div>
+</div>
+</div>
+<!-- Initiatives Participated In -->
+<section class="mt-24 mb-32">
+<div class="flex items-center gap-4 mb-12">
+<div class="tapered-line flex-1"></div>
+<h2 class="text-headline-lg font-headline-lg text-[#c8b99a] uppercase tracking-widest text-center px-4">Initiatives</h2>
+<div class="tapered-line flex-1"></div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-8 p-6 bg-surface-container hover:bg-surface-container-high border-l-2 border-primary-container transition-all group cursor-pointer">
+<div class="text-primary-container font-display-lg opacity-20 group-hover:opacity-100 transition-opacity">01</div>
+<div class="flex-1">
+<h4 class="text-headline-md text-primary">The Lost Qasidas Project</h4>
+<p class="text-on-surface-variant text-body-md">A collaborative effort to reconstruct oral poetry from pre-Islamic Central Arabia using computational linguistics.</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center gap-8 p-6 bg-surface-container hover:bg-surface-container-high border-l-2 border-transparent hover:border-primary-container transition-all group cursor-pointer">
+<div class="text-primary-container font-display-lg opacity-20 group-hover:opacity-100 transition-opacity">02</div>
+<div class="flex-1">
+<h4 class="text-headline-md text-primary">Andalusian Indigo Heritage</h4>
+<p class="text-on-surface-variant text-body-md">Mapping the trade routes of rare pigments across the Mediterranean during the 11th century.</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center gap-8 p-6 bg-surface-container hover:bg-surface-container-high border-l-2 border-transparent hover:border-primary-container transition-all group cursor-pointer">
+<div class="text-primary-container font-display-lg opacity-20 group-hover:opacity-100 transition-opacity">03</div>
+<div class="flex-1">
+<h4 class="text-headline-md text-primary">The Virtual Library of Timbuktu</h4>
+<p class="text-on-surface-variant text-body-md">On-site technical advisor for high-resolution digitizing of Malian historical manuscripts.</p>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0a0a] dark:bg-[#0a0a0a] border-t border-[#4d4639]/30 mt-32">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-[#c8b99a] font-serif flex items-center gap-4">
+<span class="text-xl uppercase tracking-widest font-bold">Tareekh Archive</span>
+<span class="material-symbols-outlined text-xs" data-icon="diamond">diamond</span>
+<span class="text-xs uppercase tracking-[0.3em]">© 2024</span>
+</div>
+<div class="flex gap-8 font-serif text-xs tracking-widest uppercase">
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</div>
+<div class="text-[#c8b99a]/40 font-serif text-xs tracking-widest uppercase">
+                © Tareekh Archive. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ede1cf",
+                    "tertiary": "#e0d5c3",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474743",
+                    "on-tertiary": "#363024",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed": "#1c1c19",
+                    "on-secondary-container": "#b7b5b0",
+                    "surface-container": "#201f1f",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "surface-container-highest": "#353534",
+                    "on-primary-container": "#544931",
+                    "primary-fixed": "#f1e1c0",
+                    "on-error": "#690005",
+                    "secondary-container": "#474743",
+                    "on-surface-variant": "#cdc5b9",
+                    "surface-variant": "#353534",
+                    "inverse-primary": "#695d43",
+                    "on-tertiary-fixed-variant": "#4d4639",
+                    "primary-container": "#c8b99a",
+                    "surface-bright": "#3a3939",
+                    "on-background": "#e5e2e1",
+                    "primary": "#e5d5b4",
+                    "secondary-fixed-dim": "#c9c6c1",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#d0c5b4",
+                    "on-secondary": "#31302d",
+                    "surface-tint": "#d4c5a5",
+                    "on-tertiary-fixed": "#201b10",
+                    "secondary": "#c9c6c1",
+                    "tertiary-container": "#c4b9a8",
+                    "outline": "#979085",
+                    "secondary-fixed": "#e5e2dd",
+                    "background": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "outline-variant": "#4b463d",
+                    "on-primary-fixed": "#221b06",
+                    "on-primary-fixed-variant": "#50462e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#392f19",
+                    "surface-dim": "#131313",
+                    "on-tertiary-container": "#51493c",
+                    "primary-fixed-dim": "#d4c5a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-safe": "64px",
+                    "container-max": "1100px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Newsreader", "serif"],
+                    "headline-lg": ["Noto Serif", "serif"],
+                    "display-lg": ["Noto Serif", "serif"],
+                    "body-md": ["Newsreader", "serif"],
+                    "headline-md": ["Noto Serif", "serif"],
+                    "body-lg": ["Newsreader", "serif"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            position: relative;
+        }
+        /* Global Noise Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ornamental-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #4d4639 50%, transparent);
+            position: relative;
+        }
+        .ornamental-divider::after {
+            content: "◆";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #c8b99a;
+            font-size: 10px;
+            background: #0a0a0a;
+            padding: 0 8px;
+        }
+        .texture-mask {
+            mask-image: radial-gradient(circle, black 70%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] border-b border-[#4d4639]/30">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="font-headline-lg tracking-tighter">Tareekh | تاريخ</span>
+</div>
+<nav class="hidden md:flex items-center gap-12 font-serif tracking-wide uppercase text-sm">
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Manifesto</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Members</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="material-symbols-outlined text-[#c8b99a] cursor-pointer" data-icon="dark_mode">dark_mode</div>
+<button class="material-symbols-outlined md:hidden text-[#c8b99a]" data-icon="menu">menu</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 bg-[#1a1a17] w-64 border-r border-[#4d4639]/30 flex flex-col pt-28 hidden lg:flex">
+<div class="px-6 mb-8">
+<h3 class="text-lg font-serif italic text-[#c8b99a]">Chapters</h3>
+<p class="text-[10px] uppercase tracking-widest text-[#c8b99a]/40 font-label-sm">Historical Record</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-[#c8b99a] text-[#0a0a0a] px-4 py-2 mx-2 rounded-sm flex items-center gap-3 font-serif text-base" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Preface</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif text-base hover:bg-[#c8b99a]/10" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span>The Early Era</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif text-base hover:bg-[#c8b99a]/10" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span>Golden Age</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif text-base hover:bg-[#c8b99a]/10" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span>Colonial Impact</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif text-base hover:bg-[#c8b99a]/10" href="#">
+<span class="material-symbols-outlined" data-icon="Account_balance">account_balance</span>
+<span>Modern Revival</span>
+</a>
+</nav>
+</aside>
+<main class="lg:pl-64 pt-32 min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-[800px] mx-auto px-8 mb-32 text-center">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-[0.3em] mb-4 block">The Founding Document</span>
+<h1 class="text-display-lg font-display-lg text-primary-container mb-8">The Manifesto of Forgotten Echoes</h1>
+<div class="ornamental-divider w-32 mx-auto mb-12"></div>
+<p class="text-body-lg font-body-lg text-on-surface-variant italic max-w-[600px] mx-auto">
+                "To understand the future, one must first learn to listen to the whispers of the past. Tareekh is not just an archive; it is a living bridge between the lost and the found."
+            </p>
+</section>
+<!-- Content Section: Preface -->
+<section class="max-w-[850px] mx-auto px-8 mb-32 relative">
+<div class="absolute -left-24 top-0 text-[180px] font-display-lg text-[#c8b99a]/5 pointer-events-none select-none italic">
+                A
+            </div>
+<div class="bg-surface-container-low p-12 border-t border-[#4d4639]/30 relative">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-8 border-b border-[#4d4639]/30 pb-4 inline-block">The Duty of Memory</h2>
+<div class="space-y-8 text-body-lg font-body-lg leading-relaxed text-[#cdc5b9]">
+<p>
+                        History is often written by the victors, but it is preserved by the faithful. In the quiet corners of old libraries and the weathered stones of forgotten citadels, the story of Islamic heritage remains vibrant, waiting for a generation willing to engage with its complexities without the lens of modern distortion.
+                    </p>
+<div class="border-l-2 border-primary-container pl-8 my-12 py-4 italic text-primary-fixed-dim bg-[#c8b99a]/5">
+<p class="text-headline-md font-headline-md">"The preservation of an artifact is a secondary act; the preservation of its meaning is the primary duty of the scholar."</p>
+</div>
+<p>
+                        We find ourselves at a crossroads of identity and technology. As digital noise grows louder, the silent resonance of historical truth becomes harder to hear. Our mission is to provide the silence necessary to listen. We do not curate for the sake of decoration, but for the sake of survival—the survival of a narrative that has shaped continents.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visual Anchor: Bento Style Grid -->
+<section class="max-w-[1100px] mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[600px]">
+<div class="md:col-span-2 relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up of a centuries-old Arabic manuscript on weathered parchment. The ink is a deep, rich black with hints of gold leaf illumination catching a soft, warm candle-light. The background is a dark, cinematic library shelf. The overall mood is scholarly, prestigious, and deeply historical, reflecting a dark-mode luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC14gwsJoRH5nONOqYVyY7gVmENAT3hPpCSy146H1Fp17AtAjcyP9230xrMF54ggKMUHEjXWGuwCpsAxan70JiaGiUAx13CaYywXx4fZJfEN6QHEUxcYjgBJeOIWt4huV3MPXaGfzG7KMHZ05m0tvbPovi3-pPJjkSrtZXbTA8hkt68GC-pgP3NMM0lXq1YnWQMFkTRBuqAcajT4t9ABKhPwjjEUzRZzFAdLM9HqOdrRY9HSHYNZocSafehi-59iJDtKJkXKe_FEQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<p class="text-label-sm font-label-sm text-primary uppercase mb-2">Primary Artifact</p>
+<h4 class="text-headline-md font-headline-md text-white">The Al-Andalus Folio</h4>
+</div>
+</div>
+<div class="grid grid-rows-2 gap-6">
+<div class="bg-surface-container-high border border-[#4d4639]/30 p-8 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="auto_stories">auto_stories</span>
+<h5 class="text-headline-md font-headline-md text-primary-container mb-2">Archival Method</h5>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Non-destructive digital twin synthesis.</p>
+</div>
+<div class="relative overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic low-angle shot of a grand Islamic geometric ceiling in a mosque. The intricate woodwork and tiles are bathed in golden hour light filtering through high windows. The atmosphere is hushed and awe-filled, emphasizing geometric perfection and ancient architectural mastery. Colors are deep shadows and warm ochre tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcWp8Yao-7Ze67Hd7mF80fNV27ThTYkWYB-ZnV1J9BgIK54OCBvT7HEmiFVGB0-2MbrvpUQd4hais6Ja9VkoTMG0SmfkcaNp5fQ3axreMwMsJuBAl5Nd5O6ZjZFV13HjipFZePxt0zJOSKqWeGye8mvNPVzQPovoJD9mMZXqnAm-6gFnyayQ-XAz4sUS9ACAxt05nZwWS2OgqczB2o4TYGrYBYD2CYTJQr4fDv86OSYmq8JYutDz679w5QMZg1zNQ6PecZyNNcCg"/>
+<div class="absolute inset-0 bg-[#0a0a0a]/30"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reading Block: Our Pillars -->
+<section class="max-w-[850px] mx-auto px-8 mb-32">
+<div class="ornamental-divider mb-16"></div>
+<h2 class="text-display-lg font-display-lg text-center text-primary-container mb-20">The Pillars of Tareekh</h2>
+<div class="grid grid-cols-1 gap-16">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<span class="text-headline-lg font-headline-lg text-[#4d4639]">01</span>
+<div>
+<h3 class="text-headline-md font-headline-md text-primary mb-4">Integrity of Source</h3>
+<p class="text-body-lg font-body-lg text-[#cdc5b9]">Every record housed within these halls must be traceable to its origin. We reject the dilution of historical facts for contemporary convenience. Accuracy is our only compass.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<span class="text-headline-lg font-headline-lg text-[#4d4639]">02</span>
+<div>
+<h3 class="text-headline-md font-headline-md text-primary mb-4">Tactile Digitalism</h3>
+<p class="text-body-lg font-body-lg text-[#cdc5b9]">Digital pixels should carry the weight of the physical. Our interface is designed to evoke the sensation of paper, stone, and silk, reminding the user of the world that once was.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<span class="text-headline-lg font-headline-lg text-[#4d4639]">03</span>
+<div>
+<h3 class="text-headline-md font-headline-md text-primary mb-4">Universal Heritage</h3>
+<p class="text-body-lg font-body-lg text-[#cdc5b9]">While rooted in the Islamic tradition, the history of Tareekh belongs to humanity. It is a testament to what a culture can achieve when it values knowledge above all else.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action -->
+<section class="max-w-[800px] mx-auto px-8 mb-48 text-center bg-[#1a1a17] py-24 border border-[#4d4639]/30">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-6">Will You Join the Archive?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-[500px] mx-auto">Access to the full historical record is reserved for those who commit to its preservation.</p>
+<button class="border border-[#c8b99a] text-[#c8b99a] px-12 py-4 font-serif uppercase tracking-widest text-sm hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 transform active:scale-95">
+                Apply for Membership
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="lg:pl-64 bg-[#0a0a0a] border-t border-[#4d4639]/30">
+<div class="max-w-[1440px] mx-auto px-8 py-16">
+<div class="flex flex-col md:flex-row justify-between items-center mb-12">
+<div class="text-[#c8b99a] font-serif text-xl mb-8 md:mb-0">Tareekh Archive</div>
+<div class="flex gap-8 font-serif text-xs tracking-widest uppercase">
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</div>
+</div>
+<div class="ornamental-divider mb-8"></div>
+<div class="text-center text-[#c8b99a]/40 font-serif text-[10px] tracking-[0.2em] uppercase">
+                © Tareekh Archive. All Rights Reserved.
+            </div>
+</div>
+</footer>
+</body></html>

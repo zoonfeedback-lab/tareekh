@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ede1cf",
+                    "tertiary": "#e0d5c3",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474743",
+                    "on-tertiary": "#363024",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary-fixed": "#1c1c19",
+                    "on-secondary-container": "#b7b5b0",
+                    "surface-container": "#201f1f",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "surface-container-highest": "#353534",
+                    "on-primary-container": "#544931",
+                    "primary-fixed": "#f1e1c0",
+                    "on-error": "#690005",
+                    "secondary-container": "#474743",
+                    "on-surface-variant": "#cdc5b9",
+                    "surface-variant": "#353534",
+                    "inverse-primary": "#695d43",
+                    "on-tertiary-fixed-variant": "#4d4639",
+                    "primary-container": "#c8b99a",
+                    "surface-bright": "#3a3939",
+                    "on-background": "#e5e2e1",
+                    "primary": "#e5d5b4",
+                    "secondary-fixed-dim": "#c9c6c1",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#d0c5b4",
+                    "on-secondary": "#31302d",
+                    "surface-tint": "#d4c5a5",
+                    "on-tertiary-fixed": "#201b10",
+                    "secondary": "#c9c6c1",
+                    "tertiary-container": "#c4b9a8",
+                    "outline": "#979085",
+                    "secondary-fixed": "#e5e2dd",
+                    "background": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "outline-variant": "#4b463d",
+                    "on-primary-fixed": "#221b06",
+                    "on-primary-fixed-variant": "#50462e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#392f19",
+                    "surface-dim": "#131313",
+                    "on-tertiary-container": "#51493c",
+                    "primary-fixed-dim": "#d4c5a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-safe": "64px",
+                    "container-max": "1100px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Newsreader"],
+                    "headline-lg": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "body-md": ["Newsreader"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Newsreader"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .ghost-border {
+            border: 1px solid rgba(77, 70, 57, 0.3);
+        }
+        .parchment-glow {
+            text-shadow: 0 0 15px rgba(200, 185, 154, 0.2);
+        }
+        .gold-border-top {
+            border-top: 1px solid #c8b99a;
+        }
+        .divider-taper {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #4d4639 50%, transparent 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="bg-[#0a0a0a] dark:bg-[#0a0a0a] docked full-width top-0 border-b border-[#4d4639]/30 fixed z-50 w-full">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-headline-md tracking-wide uppercase">Tareekh | تاريخ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-serif tracking-wide uppercase text-sm">
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Members</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#c8b99a] hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 p-2 rounded-full">dark_mode</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Suppressed for focused Journey but visible as requested by prediction) -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-24 bg-[#1a1a17] dark:bg-[#1a1a17] h-screen w-64 border-r border-[#4d4639]/30 hidden lg:flex">
+<div class="px-6 py-4">
+<h2 class="text-lg font-serif italic text-[#c8b99a]">Chapters</h2>
+<p class="font-label-sm text-[#c8b99a]/50">Historical Record</p>
+</div>
+<nav class="flex flex-col mt-8 gap-2">
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span> Preface
+            </a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span> The Early Era
+            </a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span> Golden Age
+            </a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span> Colonial Impact
+            </a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-2 mx-2 transition-colors flex items-center gap-3 font-serif" href="#">
+<span class="material-symbols-outlined" data-icon="Account_balance">account_balance</span> Modern Revival
+            </a>
+</nav>
+</aside>
+<main class="lg:ml-64 pt-32 pb-24 px-8">
+<!-- Hero Section -->
+<section class="max-w-4xl mx-auto text-center mb-24">
+<span class="font-label-sm text-primary-container mb-4 block tracking-[0.3em] uppercase">Join the Archive</span>
+<h1 class="font-display-lg text-primary mb-6 parchment-glow italic">A Covenant of Knowledge</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-80 italic">
+                Choose your level of engagement with the records of time. Every contribution sustains the preservation of our shared heritage.
+            </p>
+<div class="mt-12 flex justify-center">
+<div class="w-24 divider-taper flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-xs" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+</div>
+</section>
+<!-- Tiers Grid -->
+<section class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+<!-- Observer -->
+<div class="bg-[#1a1a17] ghost-border p-10 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary-container/20 group-hover:bg-primary-container transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="visibility">visibility</span>
+<h3 class="font-headline-lg text-primary mb-2">Observer</h3>
+<div class="font-label-sm text-on-surface-variant/60 mb-8 uppercase tracking-widest">Complimentary Access</div>
+<div class="w-full space-y-6 mb-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Access to public archive manifests</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Monthly historical newsletter</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Digital bookmarks for records</p>
+</div>
+</div>
+<button class="mt-auto w-full py-4 border border-primary-container text-primary-container font-label-sm uppercase tracking-widest hover:bg-primary-container hover:text-[#0a0a0a] transition-all duration-300">
+                    Commence Journey
+                </button>
+</div>
+<!-- Contributor -->
+<div class="bg-[#1a1a17] border border-primary-container p-10 flex flex-col items-center relative scale-105 z-10 shadow-2xl">
+<div class="absolute -top-4 bg-primary-container text-[#0a0a0a] px-6 py-1 font-label-sm uppercase tracking-tighter">Recommended</div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<h3 class="font-headline-lg text-primary mb-2">Contributor</h3>
+<div class="font-label-sm text-on-surface-variant/60 mb-8 uppercase tracking-widest">$12 / Monthly</div>
+<div class="w-full space-y-6 mb-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Full access to restricted manuscripts</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Annotation privileges on open records</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Quarterly high-resolution map prints</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Member-only symposium invites</p>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-primary-container text-[#0a0a0a] font-label-sm uppercase tracking-widest hover:bg-white transition-all duration-300">
+                    Enter the Fold
+                </button>
+</div>
+<!-- Scholar -->
+<div class="bg-[#1a1a17] ghost-border p-10 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary-container/20 group-hover:bg-primary-container transition-all duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-6" data-icon="local_library">local_library</span>
+<h3 class="font-headline-lg text-primary mb-2">Scholar</h3>
+<div class="font-label-sm text-on-surface-variant/60 mb-8 uppercase tracking-widest">$48 / Monthly</div>
+<div class="w-full space-y-6 mb-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Personal research assistance</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Early access to documentary film releases</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface">Nomination rights for new archive topics</p>
+</div>
+</div>
+<button class="mt-auto w-full py-4 border border-primary-container text-primary-container font-label-sm uppercase tracking-widest hover:bg-primary-container hover:text-[#0a0a0a] transition-all duration-300">
+                    Master the Record
+                </button>
+</div>
+</section>
+<!-- Comparison Detailed -->
+<section class="max-w-[1000px] mx-auto border border-[#4d4639]/30 bg-[#0e0e0e] p-12">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-primary italic mb-4">Detailed Comparison</h2>
+<div class="w-16 h-[1px] bg-primary-container mx-auto"></div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md border-collapse">
+<thead>
+<tr class="border-b border-[#4d4639]/30">
+<th class="py-6 px-4 font-label-sm uppercase tracking-widest text-[#c8b99a]/50">Perks &amp; Privileges</th>
+<th class="py-6 px-4 font-label-sm uppercase tracking-widest text-primary">Observer</th>
+<th class="py-6 px-4 font-label-sm uppercase tracking-widest text-primary">Contributor</th>
+<th class="py-6 px-4 font-label-sm uppercase tracking-widest text-primary">Scholar</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#4d4639]/10">
+<tr>
+<td class="py-6 px-4 text-on-surface">Archive Discovery Tool</td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+</tr>
+<tr>
+<td class="py-6 px-4 text-on-surface">Interactive Timelines</td>
+<td class="py-6 px-4 text-on-surface-variant/30">—</td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+</tr>
+<tr>
+<td class="py-6 px-4 text-on-surface">Original Script Analysis</td>
+<td class="py-6 px-4 text-on-surface-variant/30">—</td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+</tr>
+<tr>
+<td class="py-6 px-4 text-on-surface">Heritage Site Consultation</td>
+<td class="py-6 px-4 text-on-surface-variant/30">—</td>
+<td class="py-6 px-4 text-on-surface-variant/30">—</td>
+<td class="py-6 px-4"><span class="material-symbols-outlined text-[#c8b99a]">check</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Final CTA/Image -->
+<section class="mt-32 max-w-[1200px] mx-auto">
+<div class="relative h-[400px] flex items-center justify-center overflow-hidden ghost-border">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 scale-110 grayscale" data-alt="A cinematic, low-light shot of an ancient library filled with towering wooden shelves and thousands of weathered leather-bound books. Soft, warm amber light spills from a single brass lantern resting on a heavy oak table in the foreground. The air is filled with a fine mist of dust motes, creating a moody and contemplative atmosphere of intellectual discovery and reverence for the past. The color palette is dominated by deep blacks and rich, muted bronze tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3fiZ3_iuZ70G3CJxsQyCJOemM5Oa2hz1Rfpt2T3ol4M_rrIp39h1qCBfxgvxtujf20yfs8Hmjn4A6nbs37lyn2XpBT34C2h3QKMs9Gl9_gAxxZcq7SqbobI3hkHaEA3XohvavBd_4mpvnWJsCaBW8dQ0KRKgbLKcYsHXwFXJEqmb-wg3nN6P5svLFcRRYS6U0YqFt0GobXYNJfRP8FfJg1uBTDyD2SrYWwP-_k4X3sbUTVQCex47Gpdh7aPBFIe42v0yo2-Q3qw"/>
+<div class="relative z-10 text-center px-8">
+<h2 class="font-display-lg text-primary mb-8 italic">The ink of a scholar is holier than the blood of a martyr.</h2>
+<p class="font-label-sm tracking-[0.4em] uppercase text-on-surface-variant">Secure your place in history.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#4d4639]/30 mt-32 bg-[#0a0a0a]">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-[#c8b99a] font-serif flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-headline-md">Tareekh</span>
+</div>
+<div class="flex gap-8">
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity font-serif text-xs tracking-widest uppercase" href="#">Archives</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity font-serif text-xs tracking-widest uppercase" href="#">Methodology</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity font-serif text-xs tracking-widest uppercase" href="#">Privacy</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity font-serif text-xs tracking-widest uppercase" href="#">Contact</a>
+</div>
+<div class="flex flex-col items-end">
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-[#4d4639] to-transparent mb-4"></div>
+<p class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40">© Tareekh Archive. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

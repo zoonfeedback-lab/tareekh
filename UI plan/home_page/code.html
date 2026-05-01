@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tareekh | تاریخ - Historical Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>body {
+    background-color: #0a0a0a;
+    color: #c8b99a;
+    overflow-x: hidden
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCLkSru5TcxQZZHb08GuKX2NcIiih_VRGXHvcNsJfhTmyofc0oQ0HBH7pPJO0hU9RgWZi5WQkazvYZOhp1ZTdY_uTj_CQpg_hBvstfUVF0eDtzrBKTPMa3-d_L_A-dAyN4TPlxZ7ZHFEGRUBKBJ24wpkL0VOFS1nuu5Ba8Nul-YpwMEwF1FYNSJVq3g9yYUpjUYK1hYv4_A7wRWgSieWDEzjKEDauQdmYTM9nY_MwIYkzoBlG-BzqLDFPhj1RlnecVVscEi13MBqQ)
+    }
+.parchment-glow {
+    text-shadow: 0 0 15px rgba(200, 185, 154, 0.3)
+    }
+.crescent-mask {
+    clip-path: circle(50% at 50% 50%)
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ede1cf",
+                        "tertiary": "#e0d5c3",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-tertiary": "#363024",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1c1c19",
+                        "on-secondary-container": "#b7b5b0",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#544931",
+                        "primary-fixed": "#f1e1c0",
+                        "on-error": "#690005",
+                        "secondary-container": "#474743",
+                        "on-surface-variant": "#cdc5b9",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#695d43",
+                        "on-tertiary-fixed-variant": "#4d4639",
+                        "primary-container": "#c8b99a",
+                        "surface-bright": "#3a3939",
+                        "on-background": "#e5e2e1",
+                        "primary": "#e5d5b4",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#d0c5b4",
+                        "on-secondary": "#31302d",
+                        "surface-tint": "#d4c5a5",
+                        "on-tertiary-fixed": "#201b10",
+                        "secondary": "#c9c6c1",
+                        "tertiary-container": "#c4b9a8",
+                        "outline": "#979085",
+                        "secondary-fixed": "#e5e2dd",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4b463d",
+                        "on-primary-fixed": "#221b06",
+                        "on-primary-fixed-variant": "#50462e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#392f19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#51493c",
+                        "primary-fixed-dim": "#d4c5a5"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Newsreader"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Newsreader"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Newsreader"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface bg-surface-container-lowest antialiased">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="bg-[#0a0a0a] fixed top-0 left-0 right-0 z-50 border-b border-[#4d4639]/30">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-6">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<span class="font-headline-md tracking-widest uppercase">Tareekh | تاریخ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Home</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Members</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#c8b99a]/50">search</span>
+<input class="bg-transparent border-b border-[#4d4639]/30 text-xs py-1 px-4 outline-none focus:border-[#c8b99a] transition-colors font-serif tracking-widest text-[#c8b99a]" placeholder="Search Archives..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-[#c8b99a] hover:bg-[#c8b99a] hover:text-[#0a0a0a] p-2 rounded-full transition-all duration-300">dark_mode</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-32 bg-[#1a1a17] w-64 border-r border-[#4d4639]/30 hidden xl:flex">
+<div class="px-8 mb-8">
+<h3 class="text-lg font-serif italic text-[#c8b99a]">Chapters</h3>
+<p class="text-[10px] uppercase tracking-widest text-[#c8b99a]/40">Historical Record</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-[#c8b99a] text-[#0a0a0a] px-4 py-3 mx-4 rounded-sm flex items-center gap-3 font-serif text-base" href="#">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+<span>Preface</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-3 mx-4 flex items-center gap-3 transition-colors font-serif text-base" href="#">
+<span class="material-symbols-outlined text-xl">history_edu</span>
+<span>The Early Era</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-3 mx-4 flex items-center gap-3 transition-colors font-serif text-base" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span>Golden Age</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-3 mx-4 flex items-center gap-3 transition-colors font-serif text-base" href="#">
+<span class="material-symbols-outlined text-xl">gavel</span>
+<span>Colonial Impact</span>
+</a>
+<a class="text-[#c8b99a]/70 hover:text-[#c8b99a] hover:bg-[#c8b99a]/10 px-4 py-3 mx-4 flex items-center gap-3 transition-colors font-serif text-base" href="#">
+<span class="material-symbols-outlined text-xl">account_balance</span>
+<span>Modern Revival</span>
+</a>
+</nav>
+</aside>
+<main class="xl:pl-64">
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale brightness-50" data-alt="A cinematic, low-key view of an ancient stone library interior at night with subtle moonlight filtering through high arched windows. The scene is dominated by deep shadows and dark textures, creating a mood of reverent silence and mystery. The color palette is restricted to near-blacks and muted bronzes. Faint dust motes dance in the moonlight beams, adding a tactile, atmospheric quality to the historical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFeCD-VRH8qtgx296jeW6EBi7q7cym4aNpSS3zvACzu2hfxPHG3d_GQHy6GEr8QWIUxsyCG0P8f18V-JHuoj4ZkkkRuQ6Iz-PjamD40x5nKCkHOxDchD6yZYjGd0aLH901biRFupsVDmmG3oT0aMA8TALcszDGdEhSWgaAEp-eLKPaVMUpza3dDyJ-Gnw_lwrwf1gE8pw1B7_R0lkOAOs152OCFr3IhjXAUybbQ0fY3sXcBuP4oJPRR5s3fC672WRGyGSzX2uCsg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]"></div>
+</div>
+<div class="relative z-10 space-y-8 max-w-4xl mx-auto">
+<div class="flex justify-center mb-4">
+<div class="w-32 h-32 border border-[#c8b99a]/40 rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined text-7xl text-[#c8b99a] parchment-glow" style="font-variation-settings: 'FILL' 1;">brightness_3</span>
+<div class="absolute inset-0 rounded-full border border-[#c8b99a]/10 animate-pulse"></div>
+</div>
+</div>
+<h1 class="space-y-2">
+<span class="block font-display-lg text-6xl md:text-8xl text-primary leading-none tracking-tight parchment-glow">Tareekh</span>
+<span class="block font-serif text-5xl md:text-7xl text-[#c8b99a]/80" dir="rtl">تاریخ</span>
+</h1>
+<p class="font-body-lg text-tertiary-fixed max-w-xl mx-auto italic opacity-80 border-t border-b border-[#4d4639]/30 py-4">
+                    Preserving the Echoes of the Past for the Spirits of Tomorrow.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 pt-8">
+<button class="px-10 py-3 border border-[#c8b99a] text-[#c8b99a] uppercase tracking-widest text-xs hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 active:scale-95">
+                        Begin the Journey
+                    </button>
+<button class="px-10 py-3 text-[#c8b99a]/60 uppercase tracking-widest text-xs hover:text-[#c8b99a] transition-all duration-300 group flex items-center gap-2">
+                        View Archives <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Ornamental Divider -->
+<div class="flex justify-center items-center gap-8 py-16">
+<div class="h-[1px] w-32 bg-gradient-to-r from-transparent to-[#4d4639]"></div>
+<div class="text-[#c8b99a] flex items-center gap-2">
+<span class="material-symbols-outlined text-xs">diamond</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="material-symbols-outlined text-xs">diamond</span>
+</div>
+<div class="h-[1px] w-32 bg-gradient-to-l from-transparent to-[#4d4639]"></div>
+</div>
+<!-- Ideology Teaser -->
+<section class="max-w-[1100px] mx-auto px-8 pb-32 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="text-xs uppercase tracking-[0.3em] text-[#c8b99a]/50 block">Our Manifesto</span>
+<h2 class="font-display-lg text-5xl text-primary leading-tight">History is not a record of events, but a mirror of the soul.</h2>
+<div class="space-y-6 text-[#c8b99a]/80 font-body-lg leading-relaxed">
+<p>In the quiet corners of the Tareekh Archive, we do not merely collect dates and dynasties. We curate the silent narratives that shaped civilizations—the ink on parchment that refused to fade and the architectural marvels that speak in geometric whispers.</p>
+<p>Our methodology combines rigorous scholarly research with a cinematic appreciation for the tactile beauty of Islamic heritage.</p>
+</div>
+<div class="pt-4">
+<a class="inline-block border-b border-[#c8b99a] pb-2 text-sm tracking-widest uppercase hover:text-white transition-colors" href="#">Read the Methodology</a>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 border border-[#4d4639]/20 transition-all duration-500 group-hover:-inset-2"></div>
+<div class="bg-[#1a1a17] p-1 shadow-2xl">
+<img class="w-full grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100" data-alt="A macro close-up of an ancient Arabic manuscript on textured, yellowed parchment. The black ink calligraphy is sharp and intricate, featuring elaborate vowel marks and artistic flourishes. A soft, warm golden light illuminates the page from the side, casting deep shadows in the fibers of the paper. The overall aesthetic is one of prestige, age, and scholarly reverence, set against a dark, minimalist backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlAsH0JZ0SnkWOK_4mOACRF9qiXZr6EvslsIehUWpHnqFubo0RYrLHomA2WQh23nFoPTJJk5tfCANWXGEmagkdZc_irpOKUpXSI_kU_kKrqMjxBr1erYmHXLAqmqJrK9-VmSinE2U4sMq_gBSgpcZSskN44PHmcByV4Z_q1w0FxV68aN4ge5XNYcXVp6KsGN8x5OSKuY0mZgMjOwQiRg2PMzIyzyLAazT8nGm6Xa1OHvWdqGzxgmzUj_pkLtz7W8O60IsFxCQYnw"/>
+</div>
+<div class="absolute bottom-4 left-4 bg-[#0a0a0a]/80 backdrop-blur-md border border-[#c8b99a]/20 px-6 py-4">
+<p class="text-[10px] tracking-[0.4em] uppercase text-[#c8b99a]">Current Exhibit</p>
+<p class="font-serif italic text-lg">The Calligraphy of Cordoba</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Highlights -->
+<section class="max-w-[1440px] mx-auto px-8 pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px]">
+<div class="md:col-span-8 bg-[#1a1a17] border border-[#4d4639]/30 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-1000" data-alt="An expansive panoramic shot of an ancient Persian mosque's courtyard at twilight. The turquoise tiling is subtle but detailed, glowing faintly under a deep navy sky. Symmetrical archways lead the eye toward a central reflective pool. The atmosphere is serene, vast, and cinematic, emphasizing the grandeur and geometric precision of historical Islamic architecture. The color palette remains dark and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDpEyTmQDcpCP0u6EL-9Ed6PONgylTvwYNwzV8swh9bD3wgXdPU92nNBtHQR4mxTBuxeZ8I4WqDEZn46SCcB8vvzqSgbYu5A7vcMDrIw7K040ZeDhD9cLFylh_PuZnjEJAtE_UwiJz8Tpc6KaaLCbO1AF0JkHr5KvU0NSkb0_TWbnN0lfoLGcs2vm4v91yk1p-R1NxiAzHIKl619nB0bTWlSCj-PA32MPTFu6evcw-OQGzFK18M2tg5gre01rAEaO-bFkcwwEgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+<div class="absolute bottom-10 left-10 max-w-lg">
+<span class="text-xs tracking-widest uppercase text-[#c8b99a]/60">Featured Era</span>
+<h3 class="font-display-lg text-4xl mb-4">The Safavid Renaissance</h3>
+<p class="font-body-md text-[#c8b99a]/70 line-clamp-2">Explore the peak of aesthetic achievement in Isfahan, where light and geometry fused to create earthly reflections of the celestial.</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col justify-end group">
+<div class="mb-auto">
+<span class="material-symbols-outlined text-4xl text-[#c8b99a]/30 mb-4">auto_stories</span>
+<h3 class="font-display-lg text-2xl">Digital Archive</h3>
+<p class="font-body-md text-[#c8b99a]/60 mt-4 italic">Access over 14,000 scanned manuscripts and artifact records.</p>
+</div>
+<button class="mt-8 py-3 border border-[#c8b99a]/40 text-xs tracking-widest uppercase hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-colors">Enter Library</button>
+</div>
+<div class="md:col-span-4 bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col justify-between group">
+<h3 class="font-display-lg text-2xl">The Methodology</h3>
+<p class="font-body-md text-[#c8b99a]/60 italic">How we verify and preserve history through the lens of 'Silent Witness' philosophy.</p>
+<span class="material-symbols-outlined self-end text-[#c8b99a]/30 group-hover:text-[#c8b99a] transition-colors">verified_user</span>
+</div>
+<div class="md:col-span-8 bg-[#1a1a17] border border-[#4d4639]/30 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-1000" data-alt="A dramatic aerial perspective of a sprawling ancient city with dense sandstone architecture and narrow winding streets. The low sun creates long, stark shadows across the city's texture. The mood is epic and timeless, capturing the complexity of urban life across centuries. The overall tone is monochromatic bronze and deep charcoal, fitting the cinematic editorial style of the archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8CON6v-PhVg_WsrDLj7vchYT96UqCdL_bqUJWAF-WR_WuUDt_vp4K957x14VbMoCAIBjx41gT01XQ9VwhhskR9riJdiwv41C9llB0yLOQJuDZuVbPSpn-RuzIDeEMOQKiRTk09g4CEuA6BSRAGEHQSYUXw4ceFV6Q41Ztj31DFr1GlucqEjP3CuVSrU-WtdwtlRyjFU_p594vKFfd72ivdho6oii50PoQUzsezg2YKbjXW7iRJx-emqjTsE4yRslntxrbus56Wg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<h3 class="font-display-lg text-3xl">Urban Cartography</h3>
+<p class="font-body-md text-[#c8b99a]/70">Mapping the evolution of the Islamic City from Baghdad to Cairo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-[#4d4639]/30 mt-32 bg-[#0a0a0a]">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-[#4d4639]"></div>
+<div class="text-[#c8b99a] font-serif flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+<span class="font-label-sm">Tareekh Archive</span>
+</div>
+<div class="h-[1px] w-12 bg-[#4d4639]"></div>
+</div>
+<nav class="flex gap-12">
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</nav>
+<p class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40">© Tareekh Archive. All Rights Reserved.</p>
+</div>
+<!-- Centered Tapered Line Motif -->
+<div class="flex justify-center pb-8 opacity-20">
+<div class="h-[1px] w-full max-w-sm bg-gradient-to-r from-transparent via-[#c8b99a] to-transparent relative">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 w-2 h-2 bg-[#c8b99a]"></div>
+</div>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Hidden by default on desktop main content, shown as an anchor) -->
+<button class="fixed bottom-8 right-8 bg-[#c8b99a] text-[#0a0a0a] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 transition-transform xl:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</body></html>

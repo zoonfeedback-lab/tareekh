@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300..800;1,300..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ede1cf",
+                        "tertiary": "#e0d5c3",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-tertiary": "#363024",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1c1c19",
+                        "on-secondary-container": "#b7b5b0",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#544931",
+                        "primary-fixed": "#f1e1c0",
+                        "on-error": "#690005",
+                        "secondary-container": "#474743",
+                        "on-surface-variant": "#cdc5b9",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#695d43",
+                        "on-tertiary-fixed-variant": "#4d4639",
+                        "primary-container": "#c8b99a",
+                        "surface-bright": "#3a3939",
+                        "on-background": "#e5e2e1",
+                        "primary": "#e5d5b4",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#d0c5b4",
+                        "on-secondary": "#31302d",
+                        "surface-tint": "#d4c5a5",
+                        "on-tertiary-fixed": "#201b10",
+                        "secondary": "#c9c6c1",
+                        "tertiary-container": "#c4b9a8",
+                        "outline": "#979085",
+                        "secondary-fixed": "#e5e2dd",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4b463d",
+                        "on-primary-fixed": "#221b06",
+                        "on-primary-fixed-variant": "#50462e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#392f19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#51493c",
+                        "primary-fixed-dim": "#d4c5a5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-safe": "64px",
+                        "container-max": "1100px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["newsreader"],
+                        "headline-lg": ["notoSerif"],
+                        "display-lg": ["notoSerif"],
+                        "body-md": ["newsreader"],
+                        "headline-md": ["notoSerif"],
+                        "body-lg": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .texture-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .scratched-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.02;
+            background: repeating-linear-gradient(45deg, transparent, transparent 100px, #4d4639 101px, transparent 102px);
+        }
+        .gold-glow {
+            text-shadow: 0 0 15px rgba(200, 185, 154, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="texture-overlay"></div>
+<div class="scratched-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] border-b border-[#4d4639]/30">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+                Tareekh | تاريخ
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Members</a>
+<a class="font-serif tracking-wide uppercase text-sm text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#c8b99a] cursor-pointer hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 p-2 rounded-sm">dark_mode</span>
+<span class="material-symbols-outlined text-[#c8b99a] md:hidden">menu</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-24 bg-[#1a1a17] border-r border-[#4d4639]/30 w-64 hidden xl:flex">
+<div class="px-6 mb-8">
+<h2 class="text-[#c8b99a] font-serif italic text-lg">Chapters</h2>
+<p class="text-on-tertiary-fixed-variant text-xs uppercase tracking-widest">Historical Record</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 font-serif text-base hover:bg-[#c8b99a]/10 transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span> Preface
+            </a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 font-serif text-base hover:bg-[#c8b99a]/10 transition-colors" href="#">
+<span class="material-symbols-outlined">history_edu</span> The Early Era
+            </a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 font-serif text-base hover:bg-[#c8b99a]/10 transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Golden Age
+            </a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 font-serif text-base hover:bg-[#c8b99a]/10 transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span> Colonial Impact
+            </a>
+<a class="flex items-center gap-3 text-[#c8b99a]/70 hover:text-[#c8b99a] px-4 py-2 mx-2 font-serif text-base hover:bg-[#c8b99a]/10 transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance</span> Modern Revival
+            </a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="xl:pl-64 pt-32 min-h-screen">
+<div class="max-w-[1100px] mx-auto px-8">
+<!-- Hero Header -->
+<section class="mb-16 text-center">
+<div class="inline-block mb-4">
+<div class="h-px w-24 bg-gradient-to-r from-transparent via-[#c8b99a] to-transparent mx-auto"></div>
+<div class="flex items-center justify-center gap-2 my-2">
+<span class="material-symbols-outlined text-[#c8b99a] text-sm">flare</span>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Archival Directory</span>
+<span class="material-symbols-outlined text-[#c8b99a] text-sm">flare</span>
+</div>
+<div class="h-px w-24 bg-gradient-to-r from-transparent via-[#c8b99a] to-transparent mx-auto"></div>
+</div>
+<h1 class="font-display-lg text-display-lg text-[#c8b99a] mb-4 gold-glow">The Scriptorium</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+                    "Knowledge is the lost property of the believer; let them take it wherever they find it."
+                </p>
+</section>
+<!-- Stats Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-6 flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase mb-2">Total Scholars</span>
+<span class="font-headline-lg text-headline-lg text-[#c8b99a]">1,248</span>
+</div>
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-6 flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase mb-2">Manuscripts Digitized</span>
+<span class="font-headline-lg text-headline-lg text-[#c8b99a]">8,421</span>
+</div>
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-6 flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase mb-2">Active Contributions</span>
+<span class="font-headline-lg text-headline-lg text-[#c8b99a]">342</span>
+</div>
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-6 flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase mb-2">Regional Chapters</span>
+<span class="font-headline-lg text-headline-lg text-[#c8b99a]">24</span>
+</div>
+</div>
+<!-- Members Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Member Card 1 -->
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col group hover:border-[#c8b99a]/50 transition-all duration-500 relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-[#c8b99a] scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-[#0a0a0a] border border-[#c8b99a] flex items-center justify-center text-xl font-serif text-[#c8b99a]">
+                            ZM
+                        </div>
+<div class="text-right">
+<span class="text-[10px] font-label-sm border border-[#c8b99a] px-2 py-0.5 text-[#c8b99a] uppercase tracking-tighter">Tier I Scholar</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-1">Zayd Al-Mansur</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase tracking-widest mb-4">Cordoban Cartography</p>
+<div class="mt-auto pt-4 border-t border-[#4d4639]/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Contributions</span>
+<span class="font-serif text-sm text-[#c8b99a]">128 Entries</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Longevity</span>
+<span class="font-serif text-sm text-[#c8b99a]">4 Years</span>
+</div>
+</div>
+</div>
+<!-- Member Card 2 -->
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col group hover:border-[#c8b99a]/50 transition-all duration-500 relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-[#c8b99a] scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-[#0a0a0a] border border-[#c8b99a] flex items-center justify-center text-xl font-serif text-[#c8b99a]">
+                            FS
+                        </div>
+<div class="text-right">
+<span class="text-[10px] font-label-sm border border-[#c8b99a] px-2 py-0.5 text-[#c8b99a] uppercase tracking-tighter">Tier II Contributor</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-1">Fatima Shahid</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase tracking-widest mb-4">Ottoman Calligraphy</p>
+<div class="mt-auto pt-4 border-t border-[#4d4639]/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Contributions</span>
+<span class="font-serif text-sm text-[#c8b99a]">64 Entries</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Longevity</span>
+<span class="font-serif text-sm text-[#c8b99a]">2 Years</span>
+</div>
+</div>
+</div>
+<!-- Member Card 3 -->
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col group hover:border-[#c8b99a]/50 transition-all duration-500 relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-[#c8b99a] scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-[#0a0a0a] border border-[#c8b99a] flex items-center justify-center text-xl font-serif text-[#c8b99a]">
+                            IH
+                        </div>
+<div class="text-right">
+<span class="text-[10px] font-label-sm border border-[#c8b99a] px-2 py-0.5 text-[#c8b99a] uppercase tracking-tighter">Tier I Scholar</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-1">Idris Hassan</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase tracking-widest mb-4">Trans-Saharan Trade</p>
+<div class="mt-auto pt-4 border-t border-[#4d4639]/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Contributions</span>
+<span class="font-serif text-sm text-[#c8b99a]">210 Entries</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Longevity</span>
+<span class="font-serif text-sm text-[#c8b99a]">7 Years</span>
+</div>
+</div>
+</div>
+<!-- Member Card 4 -->
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col group hover:border-[#c8b99a]/50 transition-all duration-500 relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-[#c8b99a] scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-[#0a0a0a] border border-[#c8b99a] flex items-center justify-center text-xl font-serif text-[#c8b99a]">
+                            LN
+                        </div>
+<div class="text-right">
+<span class="text-[10px] font-label-sm border border-[#c8b99a] px-2 py-0.5 text-[#c8b99a] uppercase tracking-tighter">Tier II Contributor</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-1">Laila Noora</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase tracking-widest mb-4">Mughal Architecture</p>
+<div class="mt-auto pt-4 border-t border-[#4d4639]/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Contributions</span>
+<span class="font-serif text-sm text-[#c8b99a]">45 Entries</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Longevity</span>
+<span class="font-serif text-sm text-[#c8b99a]">1 Year</span>
+</div>
+</div>
+</div>
+<!-- Member Card 5 -->
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-8 flex flex-col group hover:border-[#c8b99a]/50 transition-all duration-500 relative">
+<div class="absolute top-0 left-0 w-full h-0.5 bg-[#c8b99a] scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-[#0a0a0a] border border-[#c8b99a] flex items-center justify-center text-xl font-serif text-[#c8b99a]">
+                            YK
+                        </div>
+<div class="text-right">
+<span class="text-[10px] font-label-sm border border-[#c8b99a] px-2 py-0.5 text-[#c8b99a] uppercase tracking-tighter">Tier I Scholar</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-1">Yusuf Kaan</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant uppercase tracking-widest mb-4">Seljuk Metallurgy</p>
+<div class="mt-auto pt-4 border-t border-[#4d4639]/20 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Contributions</span>
+<span class="font-serif text-sm text-[#c8b99a]">189 Entries</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] uppercase text-on-tertiary-fixed-variant">Longevity</span>
+<span class="font-serif text-sm text-[#c8b99a]">5 Years</span>
+</div>
+</div>
+</div>
+<!-- Invitation Card -->
+<div class="bg-[#0a0a0a] border border-dashed border-[#c8b99a]/30 p-8 flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-[#c8b99a]/5 transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-[#c8b99a] mb-4">person_add</span>
+<h3 class="font-headline-md text-headline-md text-[#c8b99a] mb-2">Join the Archives</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant mb-6 uppercase tracking-widest">Contribute Your Research</p>
+<button class="px-8 py-2 border border-[#c8b99a] text-[#c8b99a] font-serif text-sm uppercase tracking-widest group-hover:bg-[#c8b99a] group-hover:text-[#0a0a0a] transition-all duration-300">
+                        Apply Now
+                    </button>
+</div>
+</div>
+<!-- Custom Ornamental Divider -->
+<div class="mt-24 mb-12 flex items-center justify-center gap-4">
+<div class="h-px w-full max-w-xs bg-gradient-to-r from-transparent to-[#4d4639]"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#c8b99a]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<div class="h-px w-full max-w-xs bg-gradient-to-l from-transparent to-[#4d4639]"></div>
+</div>
+<!-- Methodology / Manifesto Section -->
+<section class="max-w-3xl mx-auto text-center mb-32">
+<h2 class="font-headline-lg text-headline-lg text-[#c8b99a] mb-6">Our Preservation Creed</h2>
+<div class="bg-[#1a1a17] border border-[#4d4639]/30 p-12 relative overflow-hidden">
+<div class="absolute -bottom-10 -right-10 opacity-5">
+<span class="material-symbols-outlined text-[200px] text-[#c8b99a]">menu_book</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed text-left first-letter:text-5xl first-letter:font-serif first-letter:text-[#c8b99a] first-letter:mr-3 first-letter:float-left">
+                        We believe that history is not merely a collection of dates, but a living dialogue between the past and the present. Every scholar in our directory contributes to a global tapestry of Islamic heritage, ensuring that the intellectual and spiritual legacies of our ancestors remain accessible to the generations of the future. Our methodology is rooted in rigorous archival integrity combined with modern cinematic storytelling.
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#4d4639]/30 mt-32 bg-[#0a0a0a]">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="text-[#c8b99a] font-serif flex items-center gap-2 mb-6 md:mb-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+                © Tareekh Archive. All Rights Reserved.
+            </div>
+<nav class="flex gap-8">
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="font-serif text-xs tracking-widest uppercase text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</nav>
+</div>
+<div class="pb-8 text-center">
+<div class="h-px w-16 bg-[#c8b99a]/30 mx-auto mb-4"></div>
+<span class="material-symbols-outlined text-[#c8b99a]/20 text-sm">auto_awesome</span>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ede1cf",
+                        "tertiary": "#e0d5c3",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474743",
+                        "on-tertiary": "#363024",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#1c1c19",
+                        "on-secondary-container": "#b7b5b0",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#544931",
+                        "primary-fixed": "#f1e1c0",
+                        "on-error": "#690005",
+                        "secondary-container": "#474743",
+                        "on-surface-variant": "#cdc5b9",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#695d43",
+                        "on-tertiary-fixed-variant": "#4d4639",
+                        "primary-container": "#c8b99a",
+                        "surface-bright": "#3a3939",
+                        "on-background": "#e5e2e1",
+                        "primary": "#e5d5b4",
+                        "secondary-fixed-dim": "#c9c6c1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#d0c5b4",
+                        "on-secondary": "#31302d",
+                        "surface-tint": "#d4c5a5",
+                        "on-tertiary-fixed": "#201b10",
+                        "secondary": "#c9c6c1",
+                        "tertiary-container": "#c4b9a8",
+                        "outline": "#979085",
+                        "secondary-fixed": "#e5e2dd",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#4b463d",
+                        "on-primary-fixed": "#221b06",
+                        "on-primary-fixed-variant": "#50462e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#392f19",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#51493c",
+                        "primary-fixed-dim": "#d4c5a5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-safe": "64px",
+                        "container-max": "1100px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Newsreader"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Newsreader"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0.04;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAcvKMD0Sp_sASt_-BttpFyWPg7I3xzAen65GOfpjaajTPxS9_fUWnuqLrjeZGAPRYURZtyAUjIYCmPH5M4qXT6eiN-jolX8-exeGXIRjR9282nrF9PTudHYVvusT_TJEYEGtmpxiG6LXfDAn9zIqqt3tIeIdXuPcg-9-1KWyFxGLCZjpZQ2JBz5XHJ48XEphnYpJci-oxDakmEkc5Xq9zXvnOckLnlO0sUnQQN_kfqIWInNmEd1Csx7SH3Z0ZhLgyct6YbGvMb-A)
+    }
+.parchment-glow {
+    box-shadow: 0 0 40px -10px rgba(200, 185, 154, 0.1)
+    }
+.ornamental-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #4d4639 50%, transparent 100%);
+    position: relative
+    }
+.ornamental-line::after {
+    content: "◆";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #c8b99a;
+    font-size: 8px;
+    background: #131313;
+    padding: 0 8px
+    }
+body {
+    background-color: #0a0a0a
+    }</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<div class="noise-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] border-b border-[#4d4639]/30">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                Tareekh | تاريخ
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-serif tracking-wide uppercase text-sm">
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Members</a>
+<a class="text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#c8b99a] hover:bg-[#c8b99a] hover:text-[#0a0a0a] p-2 transition-all duration-300 rounded-sm" data-icon="dark_mode">dark_mode</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-16 min-h-screen">
+<div class="max-w-[1200px] mx-auto px-8">
+<!-- Hero Title -->
+<div class="mb-20 text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-4 italic">Chronicles of the Soul</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">Explore the depths of Moral History and Intellectual Currents through our curated archives.</p>
+<div class="mt-12 ornamental-line w-full"></div>
+</div>
+<!-- Categories & Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="px-6 py-2 border border-primary-container text-primary-container font-label-sm text-label-sm hover:bg-primary-container hover:text-on-primary transition-all duration-300">All Archives</button>
+<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-sm text-label-sm hover:border-primary-container hover:text-primary-container transition-all duration-300">Moral History</button>
+<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-sm text-label-sm hover:border-primary-container hover:text-primary-container transition-all duration-300">Intellectual Currents</button>
+</div>
+<!-- Blog Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Article Card 1 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A macro photograph of an ancient, weathered Arabic manuscript page with elegant black calligraphy and faded gold ink ornaments. The parchment is aged and brittle, showing its centuries-old texture under soft, directional candlelight that creates dramatic shadows. The atmosphere is scholarly, cinematic, and deeply historical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQPVd4WTEecEFAeMASsDyUnkMAS0qH_EhfgAoWhW-FHVJ5yHSvLDcAMUOL0ytzEDaTrq-NP7iiIbpeafV1ETRRryWAya0EO1DKUNW5Yuhf0Uhig08Y1t8Joti-zpSUvbqrWnprhXr1oGRK1Hw2rHQpE1hfUjWTbdV7ErUU5V08sWP8jy7BgKyVW2tLpnec3Jl8rMMo0uoT3CKgJVW9-zPZDuhldvo9NUTURqr9MthPnt8NF36tUGGCmf38NWfgye7WQLj3MiCTkg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Moral History</span>
+<span class="text-[10px] text-on-surface-variant/50">XI.IV.MMXXIV</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">The Ethics of Al-Ghazali</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">An investigation into the transformative power of the heart and the discipline of the self in classical tradition.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A wide-angle shot of a majestic, ancient domed library interior with towering shelves filled with leather-bound books. Muted sunlight filters through high arched windows, illuminating dust motes in the air. The scene is quiet, reverent, and heavy with the weight of centuries of intellectual heritage. The lighting is low-key and dramatic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3JNaX1b7kB4Am0QobTpbP-B9_e9-PCvlVa3vUKHqp9KhlzcTResSKhATvNjGJY4Qm3H1zyvbCSMjnjYdVVefs7IsKIE_zLgNlqSaFDmiNb79zSlIqNb-9DnEagnatlkhnuopoly2lvhvqD3OHcsPuw-loEASjprt-e0ZZJBV7qS7j7EGiMD-4D33eldSWkTp63sgABMPzz35FfcSvAhuVMjUWqwnG5j07PmfQme708sCmm4xeZ3mo7E_gfwYw37vkOes_gcaseQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Intellectual Currents</span>
+<span class="text-[10px] text-on-surface-variant/50">VIII.III.MMXXIV</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">Rationalism in Cordoba</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">Tracing the lineage of the Great Commentator and the synthesis of revelation and reason in Andalusia.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="history_edu">history_edu</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A nocturnal silhouette of a traditional star-gazing observatory at the edge of a vast desert. Above, a brilliantly clear Milky Way galaxy stretches across the indigo sky. The scene evokes a sense of cosmic awe and the medieval pursuit of astronomical truth. The color palette is dominated by deep blacks, rich blues, and soft starlight golds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUA-59GDfzymHRt2tzejnlNcPLiSwRIpYHCj0GzgRrrn2KG11fuViVJZoyk3-jJTC3UNmVN893UjiAc1926JQ4-l-OwVa2xQBVtnVZaUE5lyHXquZw8wV8Lms_V5T5iGUuyIm1xaUZuL8uHLraFEjIfZECKTZ1RAcLLSZtoO6DGk3HppSwqhtlNP5FKKJZFCigLK_70w3ZkT6jHlmGLV0BLadew5jv2YxEAJ4glA7rL1MZ3ARdaVpoSqKg_6QcHj9paMQvLSY6rA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Intellectual Currents</span>
+<span class="text-[10px] text-on-surface-variant/50">VI.II.MMXXIV</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">The House of Wisdom</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">The translation movement and the birth of modern scientific inquiry in Abbasid Baghdad.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="menu_book">menu_book</span>
+</div>
+</div>
+</article>
+<!-- Article Card 4 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A minimalist architectural shot of a serene courtyard in a historic mosque. The geometric stone flooring leads to a simple, elegant fountain. Soft morning light casts long, rhythmic shadows through a colonnade of pillars. The aesthetic is clean, meditative, and focused on divine proportions and sacred geometry in a monochrome-tiled environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfJncUJc45hgJynpLhEIVLUvoDd5JipgsedEXPK_4MhYOj5XLO3P2iQ_F_qzLDXf4as_oOwuAR8mcwJ7JJLLZzrG1JxlISqDIEX0Zk4kX1d70PcT7i8px24LA1qI5Q4d6D9MiR1PLtsUaF3KVxZMM5T2lYZbQZYPXsqmmko0XBnD8c9Dp6ZFcOqO-r2hU4S1gqYNio7gDEGsNA_vKL7IcCkO8e1ezLlYeZ18SvH1irgap64pcWNGYqcvdNTpo-vZFXpNjY9pxIg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Moral History</span>
+<span class="text-[10px] text-on-surface-variant/50">III.I.MMXXIV</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">Architecture as Virtue</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">How sacred geometry and urban design reflected the moral landscape of the Ottoman era.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="account_balance">account_balance</span>
+</div>
+</div>
+</article>
+<!-- Article Card 5 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="An atmospheric, close-up shot of a hand dipping a traditional reed pen into a clay inkwell. Splatters of dark walnut ink are visible on a sheet of rough, textured parchment paper. The setting is dimly lit, focusing on the tactile craftsmanship and the slow, deliberate act of historical record-keeping. The mood is quiet and intensely focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI-ZvO6WT1eVc2eJYZOi6HSPj9R90zphdTJosTPBXjALS1pE0gZ5avbf5CUFvqnycbxz48VC_4nJDlYuDaiQOIyZejBTaO3H8qlmOytGFl-fesSd-I91NCRRqpd4oKa8wyi2WrXTjoc2kveeD0VQH28nxz71KUkwa02mHDBgZTCMwr88RbYm6sQ8LLIa7j72LDzPDSzkIIorBAbP6j5JwmEi9X-VdqbLlLOrBt3mcNmgvuxhu1iudJMNEgpPzta_8GThw0imTigA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Intellectual Currents</span>
+<span class="text-[10px] text-on-surface-variant/50">I.XII.MMXXIII</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">The Art of the Pen</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">A study of calligraphic traditions as a manifestation of spiritual and intellectual precision.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="edit_note">edit_note</span>
+</div>
+</div>
+</article>
+<!-- Article Card 6 -->
+<article class="group bg-[#1a1a17] border-t border-primary-container/40 p-1 flex flex-col parchment-glow transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="An ethereal image of a solitary incense burner releasing thin, swirling wisps of smoke in a dark, stone-walled chamber. The smoke catches a single beam of golden light, creating complex, fluid shapes. The setting is ancient and mystical, symbolizing the intangible nature of historical memory and spiritual contemplation in a scholarly context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYvS1MxhdCILTyO6gyAIphHdZE7gQMrv7JWgp-tyud_DExgQlaha2OliHIGkLQx9-y3wpm5e20CKPvNIa3WPAlr_uffCCOPcQhsiQRfKijm3oglcCzja5u5Tw-5euyOzgnRI248Nw9tycIgBs75ib_CZ2KnUJfh23DsBzbRZDztZP0SV3JwZmlescc9WAtlLUzeODEWH_iGLotUDWTCZCOmjjo8y33H_9EtbL-doyvBXPyGjzepZttDFAj3ckQNZQSvOeXhw-BbQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1a1a17] via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">Moral History</span>
+<span class="text-[10px] text-on-surface-variant/50">XI.XI.MMXXIII</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-tertiary transition-colors">Sufi Metaphysics</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6">Exploring the ontological foundations of mercy and the journey of the soul in medieval mysticism.</p>
+<div class="mt-auto pt-6 border-t border-[#4d4639]/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                READ ARCHIVE 
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-primary/30" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex justify-center items-center gap-8 font-serif">
+<button class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+                    Prev
+                </button>
+<div class="flex gap-4">
+<span class="text-[#c8b99a] border-b border-[#c8b99a]">01</span>
+<span class="text-[#c8b99a]/40 hover:text-[#c8b99a] cursor-pointer transition-colors">02</span>
+<span class="text-[#c8b99a]/40 hover:text-[#c8b99a] cursor-pointer transition-colors">03</span>
+</div>
+<button class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-colors flex items-center gap-2">
+                    Next
+                    <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0a0a] border-t border-[#4d4639]/30 mt-32">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-[#c8b99a] font-serif">
+<div class="text-lg tracking-widest uppercase mb-2">Tareekh Archive</div>
+<div class="text-[10px] text-[#c8b99a]/40 font-serif tracking-[0.3em]">EST. MMXXIV</div>
+</div>
+<nav class="flex gap-8 font-serif text-xs tracking-widest uppercase">
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</nav>
+<div class="text-[#c8b99a]/40 font-serif text-xs tracking-widest uppercase">
+                © Tareekh Archive. All Rights Reserved.
+            </div>
+</div>
+<div class="pb-8 text-center">
+<span class="text-[#4d4639]/30 text-xs">◆</span>
+</div>
+</footer>
+</body></html>

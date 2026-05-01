@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tareekh | The Golden Age of Al-Andalus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    background-color: #0a0a0a;
+    color: #e5e2e1;
+    font-family: "Newsreader", serif;
+    position: relative
+    }
+/* Global Noise Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBIN3Z_uH9MZT8Hg6yoICLBcMAE49LiNs_Ve1bKJLTq4jDm_YGJsO7Vq-ra04znxCNP8trIE9YCFIt8VrAcBAT1pMJwT607vGhufRLNWuqQp9LTVjRvxR5StR-2cbuzxtaOy_QsctUpW5f5WXdDZvY-8-SAqJOpKynFsoQC7r2qqikj5cZknqTPGZDCz446y8gHii6ZHdAHn5PBbNg5oEGyION7B2ZVPvd5XQxaVYwbI18gljO6C8S_O1JkYbUNGC29rlcKex0_3Q)
+    }
+.parchment-glow {
+    text-shadow: 0 0 15px rgba(200, 185, 154, 0.2)
+    }
+.diamond-divider::before, .diamond-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4d4639 50%, transparent)
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ede1cf",
+                      "tertiary": "#e0d5c3",
+                      "inverse-surface": "#e5e2e1",
+                      "on-secondary-fixed-variant": "#474743",
+                      "on-tertiary": "#363024",
+                      "error": "#ffb4ab",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed": "#1c1c19",
+                      "on-secondary-container": "#b7b5b0",
+                      "surface-container": "#201f1f",
+                      "inverse-on-surface": "#313030",
+                      "error-container": "#93000a",
+                      "surface": "#131313",
+                      "surface-container-highest": "#353534",
+                      "on-primary-container": "#544931",
+                      "primary-fixed": "#f1e1c0",
+                      "on-error": "#690005",
+                      "secondary-container": "#474743",
+                      "on-surface-variant": "#cdc5b9",
+                      "surface-variant": "#353534",
+                      "inverse-primary": "#695d43",
+                      "on-tertiary-fixed-variant": "#4d4639",
+                      "primary-container": "#c8b99a",
+                      "surface-bright": "#3a3939",
+                      "on-background": "#e5e2e1",
+                      "primary": "#e5d5b4",
+                      "secondary-fixed-dim": "#c9c6c1",
+                      "surface-container-low": "#1c1b1b",
+                      "tertiary-fixed-dim": "#d0c5b4",
+                      "on-secondary": "#31302d",
+                      "surface-tint": "#d4c5a5",
+                      "on-tertiary-fixed": "#201b10",
+                      "secondary": "#c9c6c1",
+                      "tertiary-container": "#c4b9a8",
+                      "outline": "#979085",
+                      "secondary-fixed": "#e5e2dd",
+                      "background": "#131313",
+                      "on-surface": "#e5e2e1",
+                      "outline-variant": "#4b463d",
+                      "on-primary-fixed": "#221b06",
+                      "on-primary-fixed-variant": "#50462e",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary": "#392f19",
+                      "surface-dim": "#131313",
+                      "on-tertiary-container": "#51493c",
+                      "primary-fixed-dim": "#d4c5a5"
+              },
+              "fontFamily": {
+                      "label-sm": ["Newsreader"],
+                      "headline-lg": ["Noto Serif"],
+                      "display-lg": ["Noto Serif"],
+                      "body-md": ["Newsreader"],
+                      "headline-md": ["Noto Serif"],
+                      "body-lg": ["Newsreader"]
+              }
+            },
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface-dim selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] border-b border-[#4d4639]/30">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-serif text-[#c8b99a] flex items-center gap-2">
+<span class="italic">Tareekh | تاريخ</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center font-serif tracking-wide uppercase text-sm">
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Home</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Manifesto</a>
+<a class="text-[#c8b99a]/60 hover:text-[#c8b99a] transition-colors" href="#">Members</a>
+<a class="text-[#c8b99a] border-b border-[#c8b99a] pb-1" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#c8b99a] cursor-pointer hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 p-2 rounded-sm" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[#c8b99a] cursor-pointer hover:bg-[#c8b99a] hover:text-[#0a0a0a] transition-all duration-300 p-2 rounded-sm" data-icon="dark_mode">dark_mode</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<article class="max-w-[900px] mx-auto px-6">
+<header class="mb-16 text-center">
+<div class="flex items-center justify-center gap-4 mb-8 text-[#c8b99a]/60 font-label-sm text-label-sm uppercase tracking-[0.2em]">
+<span>History</span>
+<span class="w-1 h-1 bg-[#c8b99a]/30 rounded-full"></span>
+<span>12 Min Read</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-12 parchment-glow leading-tight italic">
+                    The Echoes of Cordoba: A Renaissance of the Soul
+                </h1>
+<div class="flex flex-col items-center gap-4 border-y border-[#4d4639]/30 py-8">
+<div class="flex items-center gap-4">
+<img alt="Author profile" class="w-12 h-12 rounded-full grayscale border border-[#c8b99a]/30" data-alt="A dignified close-up portrait of a middle-aged scholar with a thoughtful expression. He has salt-and-pepper hair and wears a dark, high-collared minimalist garment. The lighting is dramatic and low-key, reminiscent of a Rembrandt painting, with soft golden highlights reflecting off his features against a deep, dark shadows. The overall aesthetic is cinematic, scholarly, and prestigious, aligning with the dark, historical theme of the Tareekh archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvssG-XRiexDXVV6n5KjroajBueS9LiCNiWIngdLP56pvrU-AbWRAMoJf6Qs3A9PatDyCBIbQ_U6llBCzTJzX6hGxOZh8eGGk8NBRiVhTmNvrG0-YfYdhiCtQjkucVKzbIm8_cfqslyhKQvQz28IHkOg_BQGbOPu6EVE4tLYIp-g0x2k2Ctfl3Kat44LpZSXRv7Plww-qPPEUfOrmJUsbsALhu4rFwI6bTSyCvUVbbdvMbA6-fzcz8hjBDEoshEmZi5BOjBdD55A"/>
+<div class="text-left">
+<p class="font-serif text-[#c8b99a] text-lg italic">Dr. Yusuf Al-Amin</p>
+<p class="font-label-sm text-label-sm text-[#c8b99a]/50 uppercase tracking-widest">Senior Archivist</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Immersive Image -->
+<div class="w-full aspect-[16/9] mb-16 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10"></div>
+<img alt="Andalusian Architecture" class="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-[3000ms]" data-alt="A breathtaking, cinematic perspective of the Great Mosque of Cordoba's interior at night. The iconic red and white double arches recede into a deep, atmospheric darkness. Faint, warm lantern light catches the edges of the ancient stone columns and the dust motes dancing in the air, creating a sense of awe-filled silence. The visual style is high-contrast and moody, emphasizing the architectural grandeur and historical weight of the site in a minimalist, prestigious dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3a26XnFdX5LZBwRHX-TTqGeXeUYkKkzRbIppWTeO1RDaXZWtAsZObcrCtV_KK0pM3XfjT6BURY8jlgVWndHPBMDHCt_21_EgmQnLKeZPx80Z9RPj5EpNzXwX7P4iRtzSAYocjPx9dlHTyqdFn6AnSg5xz48S9gxvT2moYkcCbMGiS-lIBYQbdVG4QarC5c7PboKzJ14uOXK6IGt0d5aUmpRRhVp5u-RLyhcf-MNPG_9KIoxSnzsJNhWlq1ly-wIio8OIwVZV2Ug"/>
+</div>
+<!-- Content -->
+<div class="font-body-lg text-body-lg text-[#cdc5b9] leading-[1.8] space-y-8 first-letter:text-6xl first-letter:font-serif first-letter:text-[#c8b99a] first-letter:mr-3 first-letter:float-left first-letter:mt-2">
+<p>
+                    In the quiet corners of the Iberian Peninsula, where the wind whispers through the olive groves of Andalusia, there remains a phantom memory of a world that once was. It was a time when the ink of scholars was more precious than the blood of martyrs, and the streets of Cordoba glowed with the light of ten thousand lamps while the rest of the continent lay shrouded in medieval gloom.
+                </p>
+<p>
+                    The Mezquita stands not merely as a monument of stone and mortar, but as a mathematical prayer. Each arch is a calculation of the infinite, a rhythmic repetition that draws the eye toward a horizon that feels both ancient and eternal. Here, the boundaries between the terrestrial and the divine were blurred by the sheer audacity of human creativity.
+                </p>
+<!-- Pull Quote -->
+<blockquote class="my-16 py-12 px-8 border-l-2 border-[#c8b99a] bg-[#1a1a17] relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-4xl text-[#c8b99a]/20" data-icon="format_quote">format_quote</span>
+<p class="font-serif italic text-2xl text-[#c8b99a] leading-relaxed">
+                        "The past is not a foreign country; it is a mirror. In the reflections of Al-Andalus, we see the potential of a humanity united by the pursuit of light over the comfort of shadow."
+                    </p>
+</blockquote>
+<p>
+                    To walk these halls today is to engage in a silent dialogue with Averroes and Maimonides. It is to recognize that the preservation of knowledge is the highest form of worship. The libraries of Tareekh aim to resurrect this spirit—not as a nostalgic exercise, but as a blueprint for a future that values depth over speed, and wisdom over data.
+                </p>
+</div>
+<!-- Diamond Divider -->
+<div class="flex items-center gap-4 my-24 diamond-divider">
+<span class="material-symbols-outlined text-[#c8b99a] text-xs" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+<!-- Related Articles -->
+<section class="mb-32">
+<h3 class="font-serif text-2xl text-[#c8b99a] italic mb-12 text-center">Further Inquiries</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Article Card 1 -->
+<a class="group block bg-[#1a1a17] border-t border-[#c8b99a]/30 p-8 hover:bg-[#c8b99a]/5 transition-all duration-500" href="#">
+<p class="font-label-sm text-xs text-[#c8b99a]/50 uppercase tracking-widest mb-4">Chapter II</p>
+<h4 class="font-serif text-xl text-[#c8b99a] group-hover:translate-x-2 transition-transform duration-300">The Astrolabes of the Abbasids →</h4>
+</a>
+<!-- Article Card 2 -->
+<a class="group block bg-[#1a1a17] border-t border-[#c8b99a]/30 p-8 hover:bg-[#c8b99a]/5 transition-all duration-500" href="#">
+<p class="font-label-sm text-xs text-[#c8b99a]/50 uppercase tracking-widest mb-4">Methodology</p>
+<h4 class="font-serif text-xl text-[#c8b99a] group-hover:translate-x-2 transition-transform duration-300">Deciphering the Kufic Scripts →</h4>
+</a>
+</div>
+</section>
+</article>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0a0a0a] border-t border-[#4d4639]/30 mt-32">
+<div class="max-w-[1440px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-[#c8b99a] font-serif text-xl italic tracking-wide">
+                    Tareekh Archive
+                </div>
+<p class="font-serif text-[#c8b99a]/40 text-xs tracking-widest uppercase">
+                    © Tareekh Archive. All Rights Reserved.
+                </p>
+</div>
+<div class="flex items-center gap-8 my-8 md:my-0 font-serif text-xs tracking-widest uppercase">
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Archives</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Methodology</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Privacy</a>
+<a class="text-[#c8b99a]/40 hover:text-[#c8b99a] transition-opacity" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#c8b99a]/60 cursor-pointer hover:text-[#c8b99a] transition-colors" data-icon="auto_stories">auto_stories</span>
+<span class="material-symbols-outlined text-[#c8b99a]/60 cursor-pointer hover:text-[#c8b99a] transition-colors" data-icon="history_edu">history_edu</span>
+</div>
+</div>
+<!-- Bottom Diamond Accents -->
+<div class="flex justify-center pb-8 opacity-20">
+<span class="material-symbols-outlined text-[#c8b99a] text-[10px]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+</footer>
+</body></html>
